@@ -1,0 +1,417 @@
+@import "tailwindcss";
+@import "preline/variants.css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+button:hover {
+	cursor: pointer;
+}
+
+/* --------custom font--------- */
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto-Regular.woff2') format('woff2'),
+		url('../fonts/Roboto-Regular.woff') format('woff');
+	font-weight: 100 900;
+	font-stretch: 75% 125%;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto-Italic.woff2') format('woff2'),
+		url('../fonts/Roboto-Italic.woff') format('woff');
+	font-weight: 100 900;
+	font-stretch: 75% 125%;
+	font-style: italic;
+	font-display: swap;
+}
+
+body {
+	font-family: 'Roboto-regular', sans-serif;
+	font-variation-settings: 'wght' 400, 'wdth' 100;
+}
+
+@layer components {
+	h1 {
+		@apply text-4xl font-bold mb-4 text-gray-900 dark:text-white;
+	}
+
+	h2 {
+		@apply text-3xl font-bold mb-3 text-gray-900 dark:text-white;
+	}
+
+	h3 {
+		@apply text-2xl font-semibold mb-2 text-gray-900 dark:text-white;
+	}
+
+	h4 {
+		@apply text-xl font-semibold mb-2 text-gray-900 dark:text-white;
+	}
+
+	h5 {
+		@apply text-lg font-semibold mb-1 text-gray-900 dark:text-white;
+	}
+
+	h6 {
+		@apply text-base font-semibold mb-1 text-gray-900 dark:text-white;
+	}
+}
+
+/* --------custom font--------- */
+
+
+/* -------- LAYOUTS -------- */
+@layer components {
+	.flex_xy_center {
+		@apply flex justify-center items-center;
+	}
+
+}
+
+@layer components {
+	.displayArea {
+		@apply my-5 p-4 rounded-lg border-none bg-white dark:bg-neutral-900 shadow-md shadow-gray-400 dark:shadow-none mx-auto;
+	}
+}
+
+/* -------- LAYOUTS -------- */
+
+
+/* -------- APP COLORS -------- */
+@layer components {
+	.appTextBlue {
+		@apply text-[#0A9FE0];
+	}
+
+	.appBgBlue {
+		@apply bg-[#0A9FE0];
+	}
+
+	.appBorderBlue {
+		@apply border-[#0A9FE0];
+	}
+}
+
+/* -------- APP COLORS -------- */
+
+
+
+/* -------- BUTTONS--------- */
+@layer components {
+	.showButton {
+		@apply py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-violet-500 text-white hover:bg-violet-700 focus:outline-hidden focus:bg-violet-700 disabled:opacity-50 disabled:pointer-events-none;
+	}
+
+	.editButton {
+		@apply py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-800 focus:outline-hidden focus:bg-blue-800 disabled:opacity-50 disabled:pointer-events-none;
+	}
+
+	.deleteButton {
+		@apply py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-rose-500 text-white hover:bg-red-600 focus:outline-hidden focus:bg-red-600 disabled:opacity-50 disabled:pointer-events-none;
+	}
+
+	.pillFilled {
+		@apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none;
+	}
+
+	.pillEmpty {
+		@apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-200 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800;
+	}
+}
+
+/* -------- BUTTONS--------- */
+
+/* -------- ACCORDION --------- */
+@layer components {
+
+	.PrelineAccordionItemParent {
+		@apply my-2 bg-white border border-gray-100 rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800;
+	}
+
+	.PrelineAccordionButton {
+		@apply hs-accordion-active:text-blue-600 inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-hidden dark:focus:text-neutral-400;
+	}
+}
+
+/* -------- ACCORDION --------- */
+
+
+/* -------- Sidebar toggles -------- */
+@layer components {
+
+	.sidebarToggleButtonNonSmallDevice {
+		@apply focus:outline-hidden hidden size-9 flex-none items-center justify-center gap-x-3 rounded-lg text-sm text-gray-500 dark:text-gray-200 hover:bg-gray-100 focus:bg-gray-100 disabled:pointer-events-none disabled:opacity-50 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700;
+	}
+}
+
+
+/* -------- basic Sidebar contents --------*/
+@layer components {
+
+	.dropdownMenuButton {
+		@apply focus:outline-hidden flex w-full items-center gap-x-3.5 px-4 py-2 text-start text-sm text-gray-800 hover:text-gray-200 focus:text-gray-300 hover:bg-gray-700 focus:bg-gray-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700;
+	}
+
+	.sidebarNoDropdownButton {
+		@apply focus:outline-hidden flex w-full items-center gap-x-3.5 px-4 py-2 text-sm text-gray-800 hover:text-gray-200 focus:text-gray-300 hover:bg-gray-700 focus:bg-gray-600 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:focus:bg-neutral-700;
+	}
+
+	.sidebarAnchorTagStyle {
+		@apply focus:outline-hidden flex items-center gap-x-3.5 px-10 py-2 text-[13px] text-gray-800 hover:text-gray-100 hover:bg-gray-500 focus:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 hover:scale-105;
+	}
+
+	.sidebarNoDropdownButton:hover .iconPackItem,
+	.dropdownMenuButton:hover .iconPackItem {
+		color: #e5e7eb !important;
+		/* text-gray-200 */
+	}
+
+	.sidebarSectionText {
+		@apply focus:outline-hidden flex w-full items-center gap-x-3.5 px-4 py-2 text-start text-sm text-gray-800 dark:bg-neutral-800 dark:text-neutral-200;
+	}
+}
+
+/* -------- basic Sidebar contents --------*/
+
+
+/* -------- Navbar -------- */
+@layer components {
+
+	.navbarDropdownButton {
+		@apply focus:outline-hidden flex size-9 items-center justify-center gap-x-3 rounded-lg text-sm text-gray-600 hover:bg-gray-100 focus:bg-gray-100 disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-200 dark:focus:bg-neutral-700 dark:focus:text-neutral-200;
+	}
+
+	.navbarDropdownDiv {
+		@apply relative inline-flex [--placement:bottom-right] [--strategy:absolute];
+	}
+
+	.navbarDropdownMenuButton {
+		@apply focus:outline-hidden flex w-full items-center gap-x-3 rounded-lg px-2 py-1.5 text-sm text-gray-800 hover:bg-gray-100 focus:bg-gray-100 disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800;
+	}
+}
+
+/* -------- Navbar -------- */
+
+
+
+/* -------- Data-Tables -------- */
+@layer components {
+	table thead th {
+		text-align: center !important;
+	}
+
+	.dataTableDisplays tbody {
+		padding: 8px !important;
+		border-radius: 0px 12px !important;
+		text-align: start;
+	}
+
+	.dataTables_wrapper .dataTables_scrollHead,
+	.dataTables_wrapper .dataTables_scrollHeadInner,
+	.dataTables_wrapper .dataTables_scrollHeadInner table {
+		min-width: 100% !important;
+	}
+
+	.dataTableDisplays tbody tr td {
+		padding: 16px 4px !important;
+		border-bottom: 1px solid rgba(220, 220, 220, 0.452);
+	}
+
+	.dataTableDisplays tbody tr:hover td {
+		cursor: pointer;
+		background-color: #dbeafe !important;
+	}
+
+	.passwordColumnDT {
+		max-width: 200px;
+		font-size: 12px;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	.dataTables_length {
+		margin-bottom: 32px !important;
+	}
+
+	.dataTables_filter {
+		margin-bottom: 32px;
+	}
+
+	.dataTables_info {
+		font-size: 14px;
+	}
+
+	.dataTables_paginate {
+		font-size: 14px;
+	}
+
+	.dark .dataTables_paginate .current,
+	.dark .dataTables_paginate .previous,
+	.dark .dataTables_paginate .next,
+	.dark .dataTables_paginate {
+		color: #f3f4f6 !important;
+	}
+
+	.paginate_button {
+		cursor: pointer;
+		border-radius: 8px !important;
+	}
+
+	.dataTables_paginate .current:hover,
+	.dataTables_paginate .current:focus,
+	.dataTables_paginate .previous:hover,
+	.dataTables_paginate .previous:focus,
+	.dataTables_paginate .next:hover,
+	.dataTables_paginate .next:focus {
+		background-color: #1e2939 !important;
+		color: white !important;
+		cursor: pointer !important;
+	}
+
+	.dark .dataTables_paginate .current:hover,
+	.dark .dataTables_paginate .current:focus,
+	.dark .dataTables_paginate .previous:hover,
+	.dark .dataTables_paginate .previous:focus,
+	.dark .dataTables_paginate .next:hover,
+	.dark .dataTables_paginate .next:focus {
+		background-color: #009966 !important;
+	}
+
+	.dark #dataTableDisplay_length label {
+		color: #f3f4f6;
+	}
+
+	.dark #dataTableDisplay_filter label {
+		color: #f3f4f6;
+	}
+
+	.dark #dataTableDisplay_filter input {
+		border: 1px solid #f3f4f6 !important;
+	}
+
+	.dark #dataTableDisplay_info {
+		color: #f3f4f6 !important;
+	}
+
+	#dataTableDisplay tbody tr:nth-child(even) {
+		background-color: #e5e7eb !important;
+		border-radius: 16px !important;
+	}
+
+	#dataTableDisplay tbody tr:nth-child(odd) {
+		background-color: #f3f4f6 !important;
+		border-radius: 16px !important;
+	}
+
+	.dark #dataTableDisplay tbody tr:nth-child(even) {
+		/* background-color: #d1d5dc !important; */
+		background-color: #6a7282 !important;
+		color: #d1d5dc;
+	}
+
+	.dark #dataTableDisplay tbody tr:nth-child(odd) {
+		/* background-color: #a1a1a1 !important; */
+		background-color: #4a5565 !important;
+		color: #d4d4d4;
+	}
+
+	#dataTableDisplay tbody tr:hover,
+	.dark #dataTableDisplay tbody tr:hover {
+		cursor: pointer;
+		color: white !important;
+		background-color: #364153 !important;
+	}
+}
+
+/* -------- Data-Tables -------- */
+
+
+/* -------- RICHTEXT::SUMMER-NOTE -------- */
+@layer components {
+
+	.note-frame {
+		@apply p-1 bg-white rounded-lg shadow-lg;
+	}
+
+	.summernote,
+	.note-editable {
+		@apply bg-white;
+	}
+}
+
+/* -------- RICHTEXT::SUMMER-NOTE -------- */
+
+
+/* -------- FORM::INPUTS -------- */
+@layer components {
+
+	.inputLabelSmall {
+		@apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+	}
+
+	.inputLabelMedium {
+		@apply block mb-2 text-base font-semibold dark:text-white;
+	}
+
+	.inputLabelLarge {
+		@apply block mb-2 text-xl font-bold dark:text-white;
+	}
+
+	.inputSubLabel {
+		@apply mt-1 text-xs text-gray-500 dark:text-gray-400;
+	}
+
+	.smallInput {
+		@apply block w-full text-xs p-1.5 bg-gray-50 border border-gray-300 text-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+	}
+
+	.mediumInput {
+		@apply block w-full p-4 text-base bg-gray-50 border border-gray-300 text-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+	}
+
+	.normalInput {
+		@apply block w-full p-2.5 text-sm bg-gray-50 border border-gray-300 text-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+	}
+
+	.normalInputDisabled {
+		@apply block w-full p-2.5 text-sm bg-gray-200 border border-gray-300 text-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+	}
+
+	.largeInput {
+		@apply block w-full p-12 text-lg bg-gray-50 border border-gray-300 text-gray-600 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+	}
+
+	.selectDropdownInput {
+		@apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+	}
+
+	.checkBox {
+		@apply shrink-0 mt-0.5 border-gray-200 rounded-sm text-blue-600 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800;
+	}
+}
+
+/* -------- FORM::INPUTS -------- */
+
+
+/* -------- SHADOWS -------- */
+@layer utilities {
+	.customInsetShadow {
+		box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4),
+			inset 0 -4px 8px rgba(0, 0, 0, 0.4),
+			inset 4px 0 8px rgba(0, 0, 0, 0.4),
+			inset -4px 0 8px rgba(0, 0, 0, 0.4);
+	}
+}
+
+/* -------- SHADOWS -------- */
+
+
+/* -------- CARDS -------- */
+@layer components {
+	.noImageCard {
+		@apply p-6 flex flex-col justify-between bg-gray-200 border border-gray-200 rounded-lg shadow-sm hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700;
+	}
+}
+
+/* -------- CARDS -------- */
